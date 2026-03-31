@@ -37,11 +37,13 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => console.log('Client disconnected'));
 });
 
+const path = require('path');
+
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/patients', patientRoutes);
 app.use('/api/appointments', appointmentRoutes);
@@ -57,9 +59,18 @@ app.use('/api/backup', backupRoutes);
 app.use('/api/logs', logsRoutes);
 app.use('/api/drugs', drugRoutes);
 
+// Static files (for Single-Site Deployment)
+const clientBuildPath = path.join(__dirname, '../client/dist');
+app.use(express.static(clientBuildPath));
 
-app.get('/', (req, res) => {
-    res.send('Medical ERP API is running...');
+// Catch-all route to serve the React App
+app.get('*', (req, res) => {
+    // Only serve index.html if it exists (i.e. if the build has run)
+    res.sendFile(path.join(clientBuildPath, 'index.html'), (err) => {
+        if (err) {
+            res.status(200).send('Medical ERP API is running... (Front-end build not found)');
+        }
+    });
 });
 
 // Database connection
