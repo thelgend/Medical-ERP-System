@@ -1,69 +1,68 @@
-# 🏥 Medical ERP System - نظام إدارة العيادات المتكامل
+# 🏥 Medical ERP Pro - نظام الإدارة الطبية المتكامل
 
-A professional, high-performance Medical Enterprise Resource Planning (ERP) system built for modern clinics and hospitals. The system features a beautiful dark/light mode interface, real-time updates, and multi-role access control.
+![Version](https://img.shields.io/badge/Version-4.2.0--Stable-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 
----
-
-## 🚀 Key Modules & Features
-
-### 📊 Analytics Hub
-- **Real-time Stats**: Track today's revenue, patient count, and pending appointments.
-- **Data Visualization**: Interactive charts for revenue trends and visit types.
-
-### 💊 Pharmacy & Inventory
-- **Drug Database**: Full CRUD for clinical medications.
-- **Stock Management**: Automated low-stock alerts and history of dispensed items.
-- **Auto-Billing**: Integrated with doctor prescriptions for seamless invoicing.
-
-### ⏳ Queue Management
-- **Smart Queue**: Real-time patient flow control for receptionists and doctors.
-- **Now Serving**: Audible and visual "Call Next" functionality.
-- **📺 Public Display**: Dedicated full-screen route (`/public-queue`) for waiting room TV screens.
-
-### 🖨️ Professional Printing
-- **Clean Layouts**: Custom-designed templates for Invoices, Prescriptions (Rx), and Lab Reports.
-- **Silent Printing**: Optimized for modern browser print engines.
-
-### 🛡️ Role-Based Access Control (RBAC)
-- **Admin (مدير)**: Full system access, staff management, and audit logs.
-- **Doctor (طبيب)**: Focused on patient history, electronic prescriptions, and lab results.
-- **Cashier (كاشير)**: Handles patient registration, scheduling, and billing payments.
-
-### 🌍 Localization & Theme
-- **Fully Arabic/English**: Seamless toggle with high-quality clinical translations.
-- **Modern UI**: Built with Shadcn/UI benchmarks, Glassmorphism, and Framer Motion.
+A high-performance, professional Medical ERP system designed for modern healthcare centers. Featuring a stunning Glassmorphism UI, real-time synchronization, and a robust security architecture.
 
 ---
 
-## 🛠️ Technology Stack
+## 🌟 Advanced Modules
 
-- **Frontend**: React (Vite), Tailwind CSS 4.0, Lucide Icons, Framer Motion, Axios.
-- **Backend**: Node.js, Express, Socket.io (Real-time).
-- **Database**: MongoDB (Mongoose).
-- **Security**: JWT Authentication, Bcrypt Password Hashing, Audit Logging Middleware.
+### 📊 1. Clinical Analytics Dashboard
+- **Real-time Monitoring**: Instant tracking of daily revenue, patient visits, and clinic performance.
+- **Data Insights**: Interactive charts for revenue distribution and consultation types.
+
+### ⏳ 2. Intelligent Queue System
+- **Waitlist Management**: Real-time patient flow control for receptionists and doctors.
+- **Live "Call Next"**: Audible and visual notifications when a patient is summoned.
+- **Public TV Display**: A dedicated standalone route (`/public-queue`) for waiting area monitors.
+
+### 💊 3. Pharmacy & Inventory 4.0
+- **Drug Repository**: Full CRUD management of clinical medications with auto-billing.
+- **Stock Guard**: Automated low-stock alerts and expiration monitoring.
+
+### 🛡️ 4. Role-Based Access Control (RBAC)
+- **Admin**: Full authority, staff management, and system-wide audit logs.
+- **Doctor**: Clinical history, electronic prescriptions (Rx), and lab report verification.
+- **Cashier**: Registration, appointment scheduling, and automated billing.
+
+### 🖨️ 5. Professional Document Printing
+- **Branded Outputs**: High-quality templates for Invoices, Prescriptions, and Lab findings.
+- **Modern Export**: Optimized PDF-ready layouts with clinic branding.
 
 ---
 
-## ⚙️ Installation & Setup
+## 🛠️ Technical Architecture
 
-1. **Clone the repository**
-2. **Install Dependencies**
-   - Backend: `npm install` inside the `/server` directory.
-   - Frontend: `npm install` inside the `/client` directory.
-3. **Environment Variables**
-   - Create a `.env` file in the `/server` directory with:
-     - `MONGODB_URI`
-     - `JWT_SECRET`
-     - `PORT` (default 5000)
-4. **Run the Application**
-   - Backend: `npm run dev`
-   - Frontend: `npm run dev`
+- **Frontend**: Vite + React, Tailwind CSS 4.0, Framer Motion, Axios, Socket.io-client.
+- **Backend**: Express.js, MongoDB (Mongoose), Socket.io.
+- **Security**: JWT Auth, Argon2/Bcrypt hashing, Role-based Route Protection.
 
 ---
 
-## 👨‍💻 Developed By
+## ⚙️ Quick Start
 
-**Mr. Masa Official**
+1. **Clone the Repo**
+2. **Setup Server**
+   ```bash
+   cd server
+   npm install
+   # Create .env with MONGODB_URI and JWT_SECRET
+   npm run dev
+   ```
+3. **Setup Client**
+   ```bash
+   cd client
+   npm install
+   npm run dev
+   ```
+
+---
+
+## 👨‍💻 Developed By: **Mr. Masa Official**
 
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@MrMasaOfficial)
 [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/MrMasaOfficial)
@@ -71,5 +70,4 @@ A professional, high-performance Medical Enterprise Resource Planning (ERP) syst
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/201271046052)
 
 ---
-
-Developed with ❤️ as a production-ready medical solution.
+Developed with ❤️ for the medical community.
