@@ -1,0 +1,16 @@
+[2026-03-30T01:23:35.439Z] 400 ERROR
+Error: next is not a function
+Stack: TypeError: next is not a function
+    at model.<anonymous> (C:\Users\masa\Desktop\a\server\models\Patient.js:29:5)
+    at Kareem.execPre (C:\Users\masa\Desktop\a\server\node_modules\kareem\index.js:68:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+Body: {
+  "name": "Test",
+  "age": 30,
+  "gender": "ذكر",
+  "phone": "1234567890",
+  "address": "",
+  "bloodType": "O+",
+  "status": "نشط"
+}
+-------------------
