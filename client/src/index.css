@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+/* 
+ * Enable Class-Based Dark Mode for Tailwind v4 
+ * This ensures the 'dark:' variant works with the .dark class on <html> or <body>
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* System Tokens */
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  /* Custom Typography */
+  --font-sans: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-cairo: "Cairo", sans-serif;
+  
+  /* Radius Tokens */
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+  --radius-sm: 0.75rem;
+
+  /* Custom Blurs */
+  --blur-huge: 80px;
+
+  /* Custom Transitions */
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root {
+  /* Light Mode - Clean Sky Slate */
+  --background: 210 40% 98%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+}
+
+.dark {
+  /* Premium Midnight Navy Palette - Elite Royal Look */
+  --background: 224 71% 4%;     /* Deepest Navy Base */
+  --foreground: 210 40% 98%;    /* Clean Off-white */
+  --card: 224 71% 7%;           /* Navy Card Surface */
+  --card-foreground: 210 40% 98%;
+  --popover: 224 71% 6%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217 91% 60%;       /* Electric Royal Blue Accent */
+  --primary-foreground: 210 40% 98%;
+  --secondary: 222 47% 11%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 222 47% 11%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 217 91% 60%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 222 47% 15%;        /* Subtle Navy Border */
+  --input: 222 47% 15%;
+  --ring: 217 91% 60%;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-none transition-all duration-300;
+  }
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    min-height: 100vh;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+  }
+  
+  /* RTL/LTR Dynamic Font & Alignment */
+  [dir="rtl"] { font-family: var(--font-cairo); }
+  [dir="ltr"] { font-family: var(--font-sans); }
+}
+
+/* Premium Effects - Optimized for Dark Navy Context */
+.glass {
+  @apply bg-white/70 dark:bg-slate-900/40 backdrop-blur-2xl border border-white/20 dark:border-slate-800/40 shadow-xl;
+}
+
+.glass-card {
+  @apply bg-white/80 dark:bg-slate-900/50 backdrop-blur-3xl border border-slate-100 dark:border-slate-800 shadow-2xl;
+}
+
+.glass-modal {
+  @apply bg-white/90 dark:bg-slate-950/80 backdrop-blur-3xl border border-white/40 dark:border-slate-800/60 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.6)];
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-blue-600 via-indigo-500 to-primary;
+}
+
+.dark .text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-blue-400 via-indigo-300 to-primary;
+}
+
+.premium-border {
+  @apply border border-slate-200 dark:border-slate-800/60 hover:border-primary/50 dark:hover:border-primary/50 transition-colors duration-500;
+}
+
+/* Enhanced Glow Effects */
+.glow-primary {
+  @apply shadow-[0_0_20px_rgba(var(--primary),0.15)] dark:shadow-[0_0_30px_rgba(59,130,246,0.2)];
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeIn 0.5s ease-out forwards;
+}
